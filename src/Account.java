@@ -3,6 +3,11 @@ public abstract class Account implements Rate {
 
 //    Constructor to set base properties and initialize the account
 
+    public Account(String name) {
+        System.out.print("NEW ACCOUNT: ");
+    }
+
+
 //    List common methods
 
 }
