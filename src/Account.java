@@ -1,11 +1,11 @@
 public abstract class Account implements Rate {
     //    List common properties for saving and checking accounts
-    String name;
-    String sSN;
-    double balance;
-    static int index = 10000;
-    String accountNumber;
-    double rate;
+    private String name;
+    private String sSN;
+    private double balance;
+    private static int index = 10000;
+    protected String accountNumber;
+    protected double rate;
 
 
 //    Constructor to set base properties and initialize the account
