@@ -14,7 +14,6 @@ public abstract class Account implements Rate {
         this.name = name;
         this.sSN = sSN;
         balance = initDeposit;
-        System.out.println("NAME: " + name + " SSN: " + sSN + " BALANCE: $" + balance);
 
 //    Set account number
         index++;
@@ -28,5 +27,13 @@ public abstract class Account implements Rate {
 
     }
 
-//    List common methods
+    //    List common methods
+    public void showInfo() {
+        System.out.println(
+                "NAME: " + name +
+                "\nACCOUNT NUMBER: " + accountNumber +
+                "\nBALANCE: " + balance
+        );
+
+    }
 }
