@@ -20,22 +20,43 @@ public abstract class Account implements Rate {
         this.accountNumber = setAccountNumber();
         setRate();
     }
+
     public abstract void setRate();
+
     private String setAccountNumber() {
-        String lastTwoOfSSN = sSN.substring(sSN.length()-2, sSN.length());
+        String lastTwoOfSSN = sSN.substring(sSN.length() - 2, sSN.length());
         int uniqueId = index;
-        int randomNumber = (int) (Math.random() * Math.pow(10,3));
+        int randomNumber = (int) (Math.random() * Math.pow(10, 3));
         return lastTwoOfSSN + uniqueId + randomNumber;
 
     }
 
-    //    List common methods
+    //    List common methods - transactions
+    public void deposit(double amount) {
+        balance = balance + amount;
+        System.out.println("Depositing $" + amount);
+        printBalance();
+    }
+    public void withdraw(double amount) {
+        balance = balance - amount;
+        System.out.println("Withdrawing $" + amount);
+        printBalance();
+    }
+    public void transfer(String toWhere, double amount) {
+        balance = balance - amount;
+        System.out.println("Transfering $" + amount + " to " + toWhere);
+        printBalance();
+    }
+    public void printBalance() {
+        System.out.println("Your balance is now: $" + balance);
+    }
+
     public void showInfo() {
         System.out.println(
                 "NAME: " + name +
-                "\nACCOUNT NUMBER: " + accountNumber +
-                "\nBALANCE: " + balance +
-                "\nRATE: " + rate + "%"
+                        "\nACCOUNT NUMBER: " + accountNumber +
+                        "\nBALANCE: " + balance +
+                        "\nRATE: " + rate + "%"
         );
 
     }
