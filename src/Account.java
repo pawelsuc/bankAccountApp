@@ -18,7 +18,9 @@ public abstract class Account implements Rate {
 //    Set account number
         index++;
         this.accountNumber = setAccountNumber();
+        setRate();
     }
+    public abstract void setRate();
     private String setAccountNumber() {
         String lastTwoOfSSN = sSN.substring(sSN.length()-2, sSN.length());
         int uniqueId = index;
@@ -32,7 +34,8 @@ public abstract class Account implements Rate {
         System.out.println(
                 "NAME: " + name +
                 "\nACCOUNT NUMBER: " + accountNumber +
-                "\nBALANCE: " + balance
+                "\nBALANCE: " + balance +
+                "\nRATE: " + rate + "%"
         );
 
     }

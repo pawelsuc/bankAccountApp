@@ -10,6 +10,10 @@ public class Savings extends Account {
         accountNumber = "1" + accountNumber;
         setSafetyDepositBox();
     }
+    @Override
+    public void setRate() {
+        rate = getRate() - .25;
+    }
 
     private void setSafetyDepositBox() {
         safetyDepositBoxId = (int) (Math.random() * Math.pow(10, 3));

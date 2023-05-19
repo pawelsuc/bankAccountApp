@@ -11,6 +11,11 @@ public class Checking extends Account {
         setDebitCard();
     }
 
+    @Override
+    public void setRate() {
+        rate = getRate() * .15;
+    }
+
 
 //    List any methods specific to the checking account
     private void setDebitCard() {
