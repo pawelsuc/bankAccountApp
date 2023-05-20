@@ -10,6 +10,7 @@ public class Savings extends Account {
         accountNumber = "1" + accountNumber;
         setSafetyDepositBox();
     }
+
     @Override
     public void setRate() {
         rate = getRate() - .25;
